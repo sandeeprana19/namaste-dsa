@@ -111,13 +111,13 @@
 // =============================================
 // Use case: 03
 // =============================================
-let n = 10;
+// let n = 10;
 
-function print(x) {
-  if (x > n) return;
+// function print(x) {
+//   if (x > n) return;
 
-  console.log(x);
-  print(++x);
-}
+//   console.log(x);
+//   print(++x);
+// }
 
-print(1);
+// print(1);

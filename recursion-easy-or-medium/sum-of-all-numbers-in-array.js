@@ -1,28 +1,30 @@
 // =============================================
-// Sum first n numbers
+// Sum all numbers in Array
 // =============================================
 
 // Solution:
 // =============================================
 // Use case: 01
 // =============================================
-// function sum(n) {
-//   if (n == 0) return 0;
+// let arr = [5, 3, 2, 0, 1];
 
-//   return n + sum(n - 1);
+// function sum(n) {
+//   if (n == 0) return arr[n];
+
+//   return arr[n] + sum(n - 1);
 // }
 
-// sum(5);
-// console.log(sum(5));
+// console.log(sum(arr.length - 1));
 
 // =============================================
 // Use case: 01
 // =============================================
-// function sum(n) {
-//   if (n == 0) return 0;
+// let arr = [5, 3, 2, 10, 1];
 
-//   return n + sum(n - 1);
+// function sum(n) {
+//   if (n == 0) return arr[n];
+
+//   return arr[n] + sum(n - 1);
 // }
 
-// sum(6);
-// console.log(sum(6));
+// console.log(sum(arr.length - 1));
