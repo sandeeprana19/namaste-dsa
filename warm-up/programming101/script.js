@@ -1,10 +1,10 @@
 // =============================================
 // Use case: 01
 // =============================================
-// console.log("Hello World");
-// console.log(1);
-// console.log("1");
-// console.log(true);
+console.log("Hello World");
+console.log(1);
+console.log("1");
+console.log(true);
 
 // =============================================
 // Use case: 02
@@ -23,13 +23,13 @@
 // =============================================
 // Use case: 03
 // =============================================
-// const a = 20;
-// a = 10;
+const a = 20;
+a = 10;
 
-// let x = 20;
-// console.log(x);
-// x = 30;
-// console.log(x);
+let x = 20;
+console.log(x);
+x = 30;
+console.log(x);
 
 // =============================================
 // Use case: 04
@@ -70,13 +70,13 @@
 // =============================================
 // Use case: 08
 // =============================================
-// let firstName = 20;
-// let lastName = 19;
+let firstName = 20;
+let lastName = 19;
 
-// firstName = "Sandeep";
+firstName = "Sandeep";
 
-// let fullName = firstName + lastName;
-// console.log(fullName);
+let fullName = firstName + lastName;
+console.log(fullName);
 
 // =============================================
 // Use case: 09
@@ -111,8 +111,8 @@
 // =============================================
 // Use case: 13
 // =============================================
-// let arr = ["Sandeep", 19, [5, 10, [2, 30]]];
-// console.log(arr[2][2][1]);
+let arr = ["Sandeep", 19, [5, 10, [2, 30]]];
+console.log(arr[2][2][1]);
 
 // =============================================
 // Use case: 14
@@ -131,12 +131,12 @@
 // =============================================
 // Use case: 15
 // =============================================
-// let obj = {
-//   a: 19,
-//   firstName: "Sandeep",
-//   lastName: "Rana",
-//   bool: true,
-//   arr: [6, 7, 8],
-// };
+let obj = {
+  a: 19,
+  firstName: "Sandeep",
+  lastName: "Rana",
+  bool: true,
+  arr: [6, 7, 8],
+};
 
-// console.log(obj.firstName + " " + obj.lastName);
+console.log(obj.firstName + " " + obj.lastName);

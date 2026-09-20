@@ -223,28 +223,27 @@
 // Use case: 09 (Corner case: 03)
 // =============================================
 // Write a function that returns the second largest number in an array
-// let arr = [10, 20, 8, 9, 3, 5, 20, 20];
+let arr = [10, 20, 8, 9, 3, 5, 20, 20];
 
-// function findSecondLargest(arr) {
-//     if (arr.length < 2) {
-//         return "Array should have atleast 2 elements";
-//     }
+function findSecondLargest(arr) {
+  if (arr.length < 2) {
+    return "Array should have atleast 2 elements";
+  }
 
-//     let firstLargest = -Infinity;
-//     let secondLargest = -Infinity;
+  let firstLargest = -Infinity;
+  let secondLargest = -Infinity;
 
-//     for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = arr[i];
+    } else if (arr[i] > secondLargest && arr[i] != firstLargest) {
+      secondLargest = arr[i];
+    }
+  }
 
-//         if (arr[i] > firstLargest) {
-//             secondLargest = firstLargest;
-//             firstLargest = arr[i];
-//         } else if (arr[i] > secondLargest && arr[i] != firstLargest) {
-//             secondLargest = arr[i];
-//         };
-//     }
+  return secondLargest;
+}
 
-//     return secondLargest;
-// }
-
-// const result = findSecondLargest(arr);
-// console.log(result);
+const result = findSecondLargest(arr);
+console.log(result);

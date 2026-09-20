@@ -104,15 +104,15 @@
 // Use case: 07
 // =============================================
 // Create a function to check if a number is Even or Odd.
-// function isEvenOdd(num) {
-//   let rem = num % 2;
-//   if (rem === 0) {
-//     console.log("Even number");
-//   } else {
-//     console.log("Odd number");
-//   }
-// }
+function isEvenOdd(num) {
+  let rem = num % 2;
+  if (rem === 0) {
+    console.log("Even number");
+  } else {
+    console.log("Odd number");
+  }
+}
 
-// isEvenOdd(2);
-// isEvenOdd(6);
-// isEvenOdd(9797327471);
+isEvenOdd(2);
+isEvenOdd(6);
+isEvenOdd(9797327471);

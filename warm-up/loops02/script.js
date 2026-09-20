@@ -227,20 +227,20 @@
 // Use case: 12
 // =============================================
 // Write a function that returns the smallest number in an array
-// let arr = [-9, -19, -8];
+let arr = [-9, -19, -8];
 
-// function findSmallest(arr) {
-//     let smallest = Infinity;
-//     console.log(smallest);
+function findSmallest(arr) {
+  let smallest = Infinity;
+  console.log(smallest);
 
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] < smallest) {
-//             smallest = arr[i];
-//         }
-//     }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
 
-//     return smallest;
-// }
+  return smallest;
+}
 
-// const result = findSmallest(arr);
-// console.log(result);
+const result = findSmallest(arr);
+console.log(result);

@@ -1,129 +1,129 @@
 // =============================================
 // Use case: 01
 // =============================================
-// for (let i = 0; i < 20; i++) {
-//     console.log("Hello World");
-// }
+for (let i = 0; i < 20; i++) {
+  console.log("Hello World");
+}
 
 // =============================================
 // Use case: 02
 // =============================================
-// for (let i = 0; i < 4; i++) {
-//     console.log("Hello World");
-// }
+for (let i = 0; i < 4; i++) {
+  console.log("Hello World");
+}
 
 // =============================================
 // Use case: 03
 // =============================================
-// for (let i = 0; i <= 4; i++) {
-//     console.log("Hello World");
-// }
+for (let i = 0; i <= 4; i++) {
+  console.log("Hello World");
+}
 
 // =============================================
 // Use case: 04
 // =============================================
-// for (let i = 0; i <= 4; i++) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 0; i <= 4; i++) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 05
 // =============================================
-// for (let i = 3; i < 5; i++) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 3; i < 5; i++) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 06
 // =============================================
-// for (let i = 0; i < 10; i = i + 1) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 0; i < 10; i = i + 1) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 07
 // =============================================
-// for (let i = 0; i < 10; i = i + 1) {
-//     console.log(i + 1);
-// }
+for (let i = 0; i < 10; i = i + 1) {
+  console.log(i + 1);
+}
 
 // =============================================
 // Use case: 08
 // =============================================
-// for (let i = 0; i < 10; i = i + 1) {
-//     console.log(i + 2);
-// }
+for (let i = 0; i < 10; i = i + 1) {
+  console.log(i + 2);
+}
 
 // =============================================
 // Use case: 09
 // =============================================
-// for (let i = 2; i < 9; i = i + 2) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 2; i < 9; i = i + 2) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 09
 // =============================================
-// for (let i = 2; i < 9; i = i + 3) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 2; i < 9; i = i + 3) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 10
 // =============================================
-// for (let i = 5; i > 0; i = i - 1) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 5; i > 0; i = i - 1) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 11
 // =============================================
-// for (let i = 5; i > 0; i--) {
-//     console.log("Hello World " + i);
-// }
+for (let i = 5; i > 0; i--) {
+  console.log("Hello World " + i);
+}
 
 // =============================================
 // Use case: 12
 // =============================================
-// for (let i = 5; i < 4; i++) {
-//     console.log("Hello World");
-// }
+for (let i = 5; i < 4; i++) {
+  console.log("Hello World");
+}
 
 // =============================================
 // Use case: 13
 // =============================================
 // for (let i = 0; i > 0; i++) {
-//     console.log("Hello World");
+//   console.log("Hello World");
 // }
 
 // =============================================
 // Use case: 14
 // =============================================
 // for (let i = 1; i > 0; i++) {
-//     console.log("Hello World " + i);
+//   console.log("Hello World " + i);
 // }
 
 // =============================================
 // Use case: 15
 // =============================================
-// function greet() {
-//     console.log("Namaste!")
-// }
+function greet() {
+  console.log("Namaste!");
+}
 
-// for (let i = 0; i < 10; i++) {
-//     greet();
-// }
+for (let i = 0; i < 10; i++) {
+  greet();
+}
 
 // =============================================
 // Use case: 16
 // =============================================
-// function greet(i) {
-//     console.log("Namaste! " + i);
-// }
+function greet(i) {
+  console.log("Namaste! " + i);
+}
 
-// for (let i = 0; i < 10; i++) {
-//     greet(i);
-// }
+for (let i = 0; i < 10; i++) {
+  greet(i);
+}
 
 // =============================================
 // Use case: 17
@@ -151,20 +151,20 @@
 // Use case: 19
 // =============================================
 // Print all the odd numbers in the array
-// let arr = [10, 5, 7, 0, 8, 3, 80];
+let arr = [10, 5, 7, 0, 8, 3, 80];
 
-// for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] % 2 == 1) {
-//         console.log(arr[i]);
-//     }
-// }
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 == 1) {
+    console.log(arr[i]);
+  }
+}
 
 // =============================================
 // Use case: 20
 // =============================================
-// let i = 0;
+let i = 0;
 
-// while (i < 5) {
-//   console.log("Hello World");
-//   i++;
-// }
+while (i < 5) {
+  console.log("Hello World");
+  i++;
+}

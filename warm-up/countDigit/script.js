@@ -66,23 +66,23 @@
 // =============================================
 // Use case: 04
 // =============================================
-// function countDigits(n) {
-//   // If number is 0
-//   if (n == 0) return 1;
+function countDigits(n) {
+  // If number is 0
+  if (n == 0) return 1;
 
-//   // Converting negative numbers to positive
-//   n = Math.abs(n);
+  // Converting negative numbers to positive
+  n = Math.abs(n);
 
-//   let count = 0;
+  let count = 0;
 
-//   while (n > 0) {
-//     n = Math.floor(n / 10);
-//     count++;
-//   }
+  while (n > 0) {
+    n = Math.floor(n / 10);
+    count++;
+  }
 
-//   return count;
-// }
+  return count;
+}
 
-// let num = -259;
-// let result = countDigits(num);
-// console.log(result);
+let num = -259;
+let result = countDigits(num);
+console.log(result);

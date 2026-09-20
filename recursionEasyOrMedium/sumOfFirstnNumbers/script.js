@@ -18,11 +18,11 @@
 // =============================================
 // Use case: 01
 // =============================================
-// function sum(n) {
-//   if (n == 0) return 0;
+function sum(n) {
+  if (n == 0) return 0;
 
-//   return n + sum(n - 1);
-// }
+  return n + sum(n - 1);
+}
 
-// sum(6);
-// console.log(sum(6));
+sum(6);
+console.log(sum(6));
