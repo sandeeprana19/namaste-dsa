@@ -1,31 +1,39 @@
 # Loops 01
 
-5. How can I do repetitive task?
+### 5. How can I do repetitive tasks?
 
-A. By using loop I can do a repetitive tasks.
+**A.** By using loop I can do a repetitive tasks.
 
-6. What is the meaning of loop?
+### 6. What is the meaning of loop?
 
-A. Loop means doing the thing over and over.
+**A.** Loop means doing the things over and over again.
 
-7. How many types of loops are there in javascript?
+### 7. How many types of loops are there in javascript?
 
-A. There are two types of loops:
+**A.** There are two types of loops:
 
-1. for loop
-2. while loop
+1. for loop.
+2. while loop.
 
-3. How for loop works?
+### 8. How for loop works?
 
-A. Lets understand how for loop works through an example below:
+**A.** Let's understand how for loop works through an example below:
 
-1. Example:
+#### 1. Example:
 
-```javascript
+```text
+(Initialization) (Condition) (Change)
+       ↓              ↓         ↓
 for (let i = 0; i < 5; i++) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
+
+Here:
+
+- Initialization: `let i = 0`
+- Condition: `i < 5`
+- Change: `i++`
 
 ```text
 i = 0
@@ -33,24 +41,23 @@ i = 1
 i = 2
 i = 3
 i = 4
-i = 5  fail
-```
+i = 5 (X) fails
+{loop ends}
 
 Console:
-
-```text
 Hello World
 Hello World
 Hello World
 Hello World
 Hello World
+= 5 times
 ```
 
-2.
+#### 2. Example:
 
-```javascript
+```text
 for (let i = 0; i <= 4; i++) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
 
@@ -60,45 +67,43 @@ i = 1
 i = 2
 i = 3
 i = 4
-i = 5  fail
-```
+i = 5 (X) fails
+{loop ends}
 
 Console:
-
-```text
 Hello World
 Hello World
 Hello World
 Hello World
 Hello World
+= 5 times
 ```
 
-3.
+#### 3.
 
-```javascript
+```text
 for (let i = 3; i < 5; i++) {
-  console.log("HW");
+    console.log("HW");
 }
 ```
 
 ```text
 i = 3
 i = 4
-i = 5  fail
-```
+i = 5 (X) fails
+{loop ends}
 
 Console:
-
-```text
 HW
 HW
+= 2 times
 ```
 
-4.
+#### 4.
 
-```javascript
+```text
 for (let i = 2; i < 9; i = i + 2) {
-  console.log("HW");
+    console.log("HW");
 }
 ```
 
@@ -107,23 +112,22 @@ i = 2
 i = 4
 i = 6
 i = 8
-i = 10  fail
-```
+i = 10 (X) fails
+{loop ends}
 
 Console:
-
-```text
 HW
 HW
 HW
 HW
+= 4 times
 ```
 
-5.
+#### 5.
 
-```javascript
+```text
 for (let i = 5; i > 0; i = i - 1) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
 
@@ -133,52 +137,53 @@ i = 4
 i = 3
 i = 2
 i = 1
-i = 0  fail
-```
+i = 0 (X) fails
+{loop ends}
 
 Console:
-
-```text
 Hello World
 Hello World
 Hello World
 Hello World
 Hello World
+= 5 times
 ```
 
-6.
+#### 6.
 
-```javascript
+```text
 for (let i = 5; i < 4; i++) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
 
 ```text
-i = 5  fail
+i = 5 (X) fails
+{Condition fails so loop will never run}
+
+Console:
 ```
 
-Condition fail so loop will never run.
+#### 7.
 
-7.
-
-```javascript
+```text
 for (let i = 0; i > 0; i++) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
 
 ```text
-i = 0  fail
+i = 0 (X) fails
+{Condition fails so loop will never run}
+
+Console:
 ```
 
-Condition fail so loop will never run.
+#### 8.
 
-8.
-
-```javascript
+```text
 for (let i = 1; i > 0; i++) {
-  console.log("Hello World");
+    console.log("Hello World");
 }
 ```
 
@@ -193,18 +198,34 @@ i = 7
 i = 8
 i = 9
 i = 10
+...
+
+Console:
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+...
+Infinite Loop
 ```
 
-Infinite loop.
+### 9. How while loop works?
 
-9. How while loop works?
+**A.**
 
-```javascript
+```text
+Initialization
 let i = 0;
 
 while (i < 5) {
-  console.log("Hello World");
-  i++;
+    console.log("Hello World");
+    i++;
 }
 ```
 
@@ -214,15 +235,14 @@ i = 1
 i = 2
 i = 3
 i = 4
-i = 5  fail
-```
+i = 5 (X) fails
+{loop ends}
 
 Console:
-
-```text
 Hello World
 Hello World
 Hello World
 Hello World
 Hello World
+= 5 times
 ```

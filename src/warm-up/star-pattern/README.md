@@ -1,6 +1,6 @@
-# Star Patterns
+# Star Pattern
 
-17. How do I print below star pattern on console where `n = 4`:
+### 17. How do I print below star pattern on console where n = 4?
 
 ```text
 * * * *
@@ -9,30 +9,42 @@
 * * * *
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 4;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 0; j < n; j++) {
-    row = row + "*";
-  }
+    for(let j=0; j<n; j++) {
+        row = row + "*";
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
-Here:
+Console:
 
-- `i` is responsible for the number of rows.
-- `j` is responsible for the number of columns.
+```text
+* * * *
+* * * *
+* * * *
+* * * *
+```
 
-17. How do I print below star pattern on console where `n = 4`:
+```text
+i = (loop)    j = (loop)
+0             4 lines
+1             4 lines
+2             4 lines
+3             4 lines
+```
+
+**Note:** So, i is responsible for how many rows of stars it will have and j is responsible for how many columns of stars it will have.
+
+### 18. How do I print below stars pattern on console where n = 4?
 
 ```text
 *
@@ -41,70 +53,74 @@ Here:
 * * * *
 ```
 
-?
-
-A.
-
-```js
-let n = 4;
-
-for (let i = 0; i < n; i++) {
-  let row = "";
-
-  for (let j = 0; j <= i; j++) {
-    row = row + "*";
-  }
-
-  console.log(row);
-}
-```
-
-Before `i + 1`, the inner loop runs:
+**A.**
 
 ```text
-i = 0  -> 1 line
-i = 1  -> 2 lines
-i = 2  -> 3 lines
-i = 3  -> 4 lines
-```
-
----
-
-19. Different conditions but the same loop?
-
-A.
-
-1.
-
-```js
-for (let i = 0; i < 5; i++) {
-  // 5 lines -> [0, 1, 2, 3, 4]
-}
-
-for (let i = 0; i <= 4; i++) {
-  // 5 lines -> [0, 1, 2, 3, 4]
-}
-```
-
-Both loops produce the same number of iterations.
-
-2.
-
-```js
 let n = 4;
 
-for (let i = 0; i < n + 1; i++) {
-  // 5 lines -> [0, 1, 2, 3, 4]
-}
+for(let i=0; i<n; i++) {
+    let row = "";
 
-for (let i = 0; i <= n; i++) {
-  // 5 lines -> [0, 1, 2, 3, 4]
+    for(let j=0; j<i+1; j++) {
+        row = row + "*";
+    }
+
+    console.log(row);
 }
 ```
 
----
+Console:
 
-20. How do I print below pattern on console where `n = 5`:
+```text
+*
+* *
+* * *
+* * * *
+```
+
+```text
+i = (loop)    j = (loop)
+0             1 line
+1             2 lines
+2             3 lines
+3             4 lines
+```
+
+### 19. Different conditions but same loop?
+
+**A.**
+
+#### 1.
+
+```text
+for(let i=0; i<5; i++) {
+    // 5 times -> [0,1,2,3,4]
+}
+
+for(let i=0; i<=4; i++) {
+    // 5 times -> [0,1,2,3,4]
+}
+```
+
+**Same loops**
+
+#### 2.
+
+```text
+let n = 4;
+
+for(let i=0; i<n+1; n++) {
+    // 5 times -> [0,1,2,3,4]
+}
+
+for(let i=0; i<=n; n++) {
+    // 5 times -> [0,1,2,3,4]
+}
+```
+
+**Same loops**
+
+### 20. How do I print below pattern on console where n = 5?
 
 ```text
 1
@@ -114,27 +130,58 @@ for (let i = 0; i <= n; i++) {
 1 2 3 4 5
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 5;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 0; j <= i; j++) {
-    row = row + (j + 1);
-  }
+    for(let j=0; j<=i; j++) {
+        row = row + (j+1);
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
----
+P.T.O.
 
-21. How do I print below pattern on console where `n = 5`:
+## Pattern Dry Run
+
+```text
+j loop before i+1
+
+i = (loop)    j = (loop)
+0             0
+1             0 1
+2             0 1 2
+3             0 1 2 3
+4             0 1 2 3 4
+
+(j+1)
+
+i = (loop)    j = (loop)
+0             1
+1             1 2
+2             1 2 3
+3             1 2 3 4
+4             1 2 3 4 5
+```
+
+Complete flow below:
+
+```text
+Console          i = (loop)    j = (loop)
+1                0             1 line
+1 2              1             2 lines
+1 2 3            2             3 lines
+1 2 3 4          3             4 lines
+1 2 3 4 5        4             5 lines
+```
+
+### 21. How do I print below pattern on console where n = 5?
 
 ```text
 1
@@ -144,27 +191,77 @@ for (let i = 0; i < n; i++) {
 5 5 5 5 5
 ```
 
-?
+**A. 1.**
 
-A.
-
-```js
+```text
 let n = 5;
 
-for (let i = 1; i <= n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 1; j <= i; j++) {
-    row = row + i;
-  }
+    for(let j=0; j<=i; j++) {
+        row = row + (i+1);
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
----
+Console:
 
-22. How do I print below pattern on console where `n = 5`:
+```text
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+```
+
+```text
+i = (loop)    j = (loop)
+0             1 line (i+1) x 1
+1             2 lines (i+1) x 2
+2             3 lines (i+1) x 3
+3             4 lines (i+1) x 4
+4             5 lines (i+1) x 5
+```
+
+#### 2.
+
+```text
+let n = 5;
+
+for(let i=1; i<=5; i++) {
+    let row = "";
+
+    for(let j=1; j<=i; j++) {
+        row = row + i;
+    }
+
+    console.log(row);
+}
+```
+
+Console:
+
+```text
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+```
+
+```text
+i = (loop)    j = (loop)
+1             1 lines (i x 1)
+2             2 lines (i x 2)
+3             3 lines (i x 3)
+4             4 lines (i x 4)
+5             5 lines (i x 5)
+```
+
+### 22. How do I print below pattern on console where n = 5?
 
 ```text
 1 2 3 4 5
@@ -174,33 +271,25 @@ for (let i = 1; i <= n; i++) {
 1
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 5;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 0; j < n - i; j++) {
-    row = row + (j + 1);
-  }
+    for(let j=0; j<n-(i+1); j++) {
+        row = row + (j+1);
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
-The number of inner-loop iterations is:
+P.T.O.
 
-```text
-n, n-1, n-2, ..., 1
-```
-
----
-
-23. How do I print below star pattern on console where `n = 5`:
+### 23. How do I print below stars pattern on console where n = 5?
 
 ```text
 * * * * *
@@ -210,37 +299,44 @@ n, n-1, n-2, ..., 1
 *
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 5;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 0; j < n - i; j++) {
-    row = row + "*";
-  }
+    for(let j=0; j<n-i; j++) {
+        row = row + "*";
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
-The inner loop runs:
+Console:
 
 ```text
-5 lines
-4 lines
-3 lines
-2 lines
-1 line
+* * * * *
+* * * *
+* * *
+* *
+*
 ```
 
----
+```text
+i = (loop)    j = (loop)
+0             5 lines
+1             4 lines
+2             3 lines
+3             2 lines
+4             1 line
+```
 
-24. How do I print below star pattern on console where `n = 5`:
+`(n-i)`
+
+### 24. How do I print below star pattern where n = 5?
 
 ```text
         *
@@ -250,33 +346,41 @@ The inner loop runs:
 * * * * *
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 5;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  // Adding spaces
-  for (let j = 0; j < n - (i + 1); j++) {
-    row = row + " ";
-  }
+    for(let j=0; j<n-(i+1); j++) {
+        row = row + " ";
+    }
 
-  // Adding stars
-  for (let k = 0; k < i + 1; k++) {
-    row = row + "*";
-  }
+    for(let k=0; k<i+1; k++) {
+        row = row + "*";
+    }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
----
+```text
+Console       i = (loop)    j = (empty space)    k = (star loop)
 
-25. How do I print below pattern on console where `n = 6`:
+    *         0             4 lines             1 line
+  * *         1             3 lines             2 lines
+* * *         2             2 lines             3 lines
+* * * *       3             1 line              4 lines
+* * * * *     4             0 line              5 lines
+```
+
+`(n-(i+1))` = Empty space
+
+`(i+1)` = Star loop
+
+### 25. How do I print below pattern on console where n = 6?
 
 ```text
 1
@@ -287,34 +391,30 @@ for (let i = 0; i < n; i++) {
 1 0 1 0 1 0
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 6;
 
-for (let i = 0; i < n; i++) {
-  let row = "";
-  let toggle = 1;
+for(let i=0; i<n; i++) {
+    let row = "";
+    let toggle = 1;
 
-  for (let j = 0; j <= i; j++) {
-    row = row + toggle;
+    for(let j=0; j<=i; j++) {
+        row = row + toggle;
 
-    if (toggle === 1) {
-      toggle = 0;
-    } else {
-      toggle = 1;
+        if(toggle == 1) {
+            toggle = 0;
+        } else {
+            toggle = 1;
+        }
     }
-  }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
----
-
-25. How do I print below pattern on console where `n = 5`:
+### 26. How do I print below pattern on console where n = 5?
 
 ```text
 1
@@ -324,39 +424,27 @@ for (let i = 0; i < n; i++) {
 1 0 1 0 1
 ```
 
-?
+**A.**
 
-A.
-
-```js
+```text
 let n = 5;
-let toggle = 1;
+let toggle = 1;   ← By defining toggle outside it won't get redefined
 
-for (let i = 0; i < n; i++) {
-  let row = "";
+for(let i=0; i<n; i++) {
+    let row = "";
 
-  for (let j = 0; j <= i; j++) {
-    row = row + toggle;
+    for(let j=0; j<=i; j++) {
+        row = row + toggle;
 
-    if (toggle === 1) {
-      toggle = 0;
-    } else {
-      toggle = 1;
+        if(toggle == 1) {
+            toggle = 0;
+        } else {
+            toggle = 1;
+        }
     }
-  }
 
-  console.log(row);
+    console.log(row);
 }
 ```
 
-The important logic is:
-
-```js
-if (toggle === 1) {
-  toggle = 0;
-} else {
-  toggle = 1;
-}
-```
-
-This switches the value between `1` and `0`.
+→ Switch toggle

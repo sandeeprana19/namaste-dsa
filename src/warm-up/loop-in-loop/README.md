@@ -1,39 +1,86 @@
 # Loop in Loop
 
-16. How does a double loop work?
+### 16. How double loop works?
 
-A.
+**A.** Let's dry run double loop below:
 
-```js
+```text
 for (let i = 0; i < 5; i++) {
-  for (let j = 0; j < 5; j++) {
-    console.log(i, j);
-  }
+    for (let j = 0; j < 5; j++) {
+        // CODE
+    }
 }
 ```
 
-The outer loop runs 5 times and the inner loop runs 5 times for every
-outer-loop iteration.
-
-Total:
-
 ```text
-5 × 5 = 25 lines
+i = 0
+    j = 0
+    j = 1
+    j = 2
+    j = 3
+    j = 4
+    j = 5
+    {inner loop ends}
+
+i = 1
+    j = 0
+    j = 1
+    j = 2
+    j = 3
+    j = 4
+    j = 5
+    {inner loop ends}
+
+i = 2
+    j = 0
+    j = 1
+    j = 2
+    j = 3
+    j = 4
+    j = 5
+    {inner loop ends}
+
+i = 3
+    j = 0
+    j = 1
+    j = 2
+    j = 3
+    j = 4
+    j = 5
+    {inner loop ends}
+
+i = 4
+    j = 0
+    j = 1
+    j = 2
+    j = 3
+    j = 4
+    j = 5
+    {inner loop ends}
+
+i = 5
+{outer loop ends}
+
+5 x 5 = 25 times
 ```
 
-Example 1
+**Code x 25**
 
-```js
-for (let i = 0; i < 3; i++) {
-  for (let j = 0; j < 3; j++) {
-    console.log(i, j);
-  }
+**Example:**
+
+#### 1.
+
+```text
+for(let i=0; i<3; i++) {
+    for(let j=0; j<3; j++) {
+        console.log(i,j);
+    }
 }
 ```
 
-Output:
-
 ```text
+Console
+
 0 0
 0 1
 0 2
@@ -45,99 +92,199 @@ Output:
 2 2
 ```
 
-Example 2
+#### 2.
 
-```js
-for (let i = 0; i < 3; i++) {
-  for (let j = 0; j <= i; j++) {
-    console.log(i, j);
-  }
+```text
+for(let i=0; i<3; i++) {
+    for(let j=0; j<i; j++) {
+        console.log(i,j);
+    }
 }
 ```
 
-Output:
+```text
+Console
+
+1 0
+2 0
+2 1
+```
+
+So, every time i value is increased then j count is getting increased:
 
 ```text
+i(loop)    j(loop)
+0          X
+1          0 → 1 lines
+2          0,1 → 2 lines
+```
+
+#### 3.
+
+```text
+for(let i=0; i<5; i++) {
+    for(let j=0; j<=i; j++) {
+        console.log(i,j);
+    }
+}
+```
+
+```text
+Console
+
 0 0
 1 0
 1 1
 2 0
 2 1
 2 2
+3 0
+3 1
+3 2
+3 3
+4 0
+4 1
+4 2
+4 3
+4 4
 ```
-
-Number of lines:
 
 ```text
-1 + 2 + 3 = 6
+i(loop)    j(loop)
+0          0
+1          0,1
+2          0,1,2
+3          0,1,2,3
+4          0,1,2,3,4
 ```
 
-Example 3
+#### 4.
 
-```js
-for (let i = 0; i < 5; i++) {
-  for (let j = 0; j <= i; j++) {
-    console.log(i, j);
-  }
+```text
+for(let i=0; i<3; i++) {
+    for(let j=i; j>0; j--) {
+        console.log(i,j);
+    }
 }
 ```
 
-Number of lines:
-
 ```text
-1 + 2 + 3 + 4 + 5 = 15
-```
+Console
 
-Example 4
-
-```js
-for (let i = 0; i < 3; i++) {
-  for (let j = i; j > 0; j--) {
-    console.log(i, j);
-  }
-}
-```
-
-Output:
-
-```text
 1 1
 2 2
 2 1
 ```
 
-Example 5
+```text
+i(loop)    j(loop)
+0          X {loop won't start}
+1          1
+2          2
+           1
+3 (X) fails
+{loop ends}
+```
 
-```js
-for (let i = 0; i < 3; i++) {
-  for (let j = i; j >= 0; j--) {
-    console.log(i, j);
-  }
+P.T.O.
+
+### 5.
+
+```text
+for(let i=0; i<3; i++) {
+    for(let j=i; j>=0; j--) {
+        console.log(i,j);
+    }
 }
 ```
 
-Example 6
+Console:
 
-```js
-for (let i = 5; i > 0; i--) {
-  for (let j = 0; j < i; j++) {
-    console.log(i, j);
-  }
+```text
+0 0
+1 1
+1 0
+2 2
+2 1
+2 0
+```
+
+```text
+i = (loop)    j = (loop)
+
+0             0
+
+1             1
+              0
+
+2             2
+              1
+              0
+
+3 (X) fails
+{loop ends}
+```
+
+### 6.
+
+```text
+for(let i=5; i>0; i--) {
+    for(let j=0; j<i; j++) {
+        console.log(i,j);
+    }
 }
 ```
 
-The inner loop runs:
+Console:
 
 ```text
-5 lines
-4 lines
-3 lines
-2 lines
-1 line
+5 0
+5 1
+5 2
+5 3
+5 4
+4 0
+4 1
+4 2
+4 3
+3 0
+3 1
+3 2
+2 0
+2 1
+1 0
 ```
 
-Total:
+```text
+i = (loop)    j = (loop)
+
+5             0
+              1
+              2
+              3
+              4
+
+4             0
+              1
+              2
+              3
+
+3             0
+              1
+              2
+
+2             0
+              1
+
+1             0
+```
 
 ```text
-5 + 4 + 3 + 2 + 1 = 15 lines
+i = 5   j = 5 lines
+i = 4   j = 4 lines
+i = 3   j = 3 lines
+i = 2   j = 2 lines
+i = 1   j = 1 line
+
+15 lines
 ```

@@ -1,89 +1,88 @@
 # Loops 02
 
-10. Write a function that searches for an element let say 10 in an array let say `arr=[4,2,0,10,8,30]` and returns the index, if the element is not present then return -1?
+### 10. Write a function that searches for an element let say 10 in an array let say arr = [4,2,0,10,8,30] and return the index if the element is not present then return -1?
 
-A.
+#### 1. Let's say search element is 10:
 
-1. Let’s say search element is 10:
+```text
+let arr = [4,2,0,10,8,30];
 
-```javascript
-let arr = [4, 2, 0, 10, 8, 30];
-
-function searchElement(arr, x) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == x) {
-      return i;
+function searchElement(arr,x) {
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] == x) {
+            return i;
+        }
     }
-  }
-  return -1;
+    return -1;
 }
 
-let result = searchElement(arr, 10);
+let result = searchElement(arr,10);
 console.log(result);
 ```
 
 ```text
 x = 10
 
-i = 0   4   X
-i = 1   2   X
-i = 2   0   X
-i = 3   10  ✓
+i = 0    arr[i] = 4    (X)
+i = 1    arr[i] = 2    (X)
+i = 2    arr[i] = 0    (X)
+i = 3    arr[i] = 10   (✓)
+         return 3
+
+Console:
+3
 ```
 
-`return 3`
+And as soon as a function return something it will not do anything else and the function will break at that moment. So, whenever I am returning something from function then function stops executing and it just returns the value. So that's how function works.
 
-And as soon as the function returns something it will not do anything else and the function will be out at that moment. So, whenever I return something from function then function step executing and it just return the value. So that's how function works.
+#### 2. Let's say second element is 49:
 
-2. Let’s say search element is 49:
+```text
+let arr = [4,2,0,10,8,30];
 
-```javascript
-let arr = [4, 2, 0, 10, 8, 30];
-
-function searchElement(arr, x) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == x) {
-      return i;
+function searchElement(arr,x) {
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] == x) {
+            return i;
+        }
     }
-  }
-  return -1;
+    return -1;
 }
 
-let result = searchElement(arr, 49);
+let result = searchElement(arr,49);
 console.log(result);
 ```
 
 ```text
 x = 49
 
-i = 0   4   X
-i = 1   2   X
-i = 2   0   X
-i = 3   10  X
-i = 4   8   X
-i = 5   30  X
-i = 6   fail
+i = 0    arr[i] = 4    (X)
+i = 1    arr[i] = 2    (X)
+i = 2    arr[i] = 0    (X)
+i = 3    arr[i] = 10   (X)
+i = 4    arr[i] = 8    (X)
+i = 5    arr[i] = 30   (X)
+i = 6    (X) fails
+{loop ends}
+
+So function return -1
 ```
 
-Loop ends.
+### 11. Write a function that returns the number of negative numbers in an array let say [2,-9,17,0,1,-10,-4,8].
 
-So function returns -1.
+**A.**
 
-11. Write a function that returns the number of negative numbers in an array lets say `[2,-9,17,0,1,-10,-4,8]`?
-
-A.
-
-```javascript
-let arr = [2, -9, 17, 0, 1, -10, -4, 8];
+```text
+let arr = [2,-9,17,0,1,-10,-4,8];
 
 function countNegatives(arr) {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < 0) {
-      count = count + 1;
+    let count = 0;
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] < 0) {
+            count = count + 1;
+        }
     }
-  }
-  return count;
+    return count;
 }
 
 let result = countNegatives(arr);
@@ -91,46 +90,45 @@ console.log(result);
 ```
 
 ```text
-i = 0    2    X
-i = 1   -9    ✓
-i = 2   17    X
-i = 3    0    X
-i = 4    1    X
-i = 5  -10    ✓
-i = 6   -4    ✓
-i = 7    8    X
-```
+i = 0   arr[i] = 2    (X)
+i = 1   arr[i] = -9   (✓)
+i = 2   arr[i] = 17   (X)
+i = 3   arr[i] = 0    (X)
+i = 4   arr[i] = 1    (X)
+i = 5   arr[i] = -10  (✓)
+i = 6   arr[i] = -4   (✓)
+i = 7   arr[i] = 8    (X)
+i = 8   (X) fails
+{loop ends}
 
 Count:
-
-```text
 0
 1
 2
 3
+
+return 3
 ```
 
-`return 3`
+**Note:** `count = count + 1` && `count++` && `++count` are all one and the same thing does.
 
-Note: `count = count + 1` & `count++` are one and the same thing does.
+### 12. Write a function that returns the largest number in an array let say [5,0,10,8,17,1]?
 
-12. Write a function that returns the largest number in an array let say `[5,0,10,8,17,1]`?
+**A.**
 
-A.
-
-```javascript
-let arr = [5, 0, 10, 8, 17, 1];
+```text
+let arr = [5,0,10,8,17,1];
 
 function findLargest(arr) {
-  let largest = -1;
+    let largest = -1;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > largest) {
-      largest = arr[i];
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] > largest) {
+            largest = arr[i];
+        }
     }
-  }
 
-  return largest;
+    return largest;
 }
 
 const result = findLargest(arr);
@@ -138,71 +136,144 @@ console.log(result);
 ```
 
 ```text
-largest
--1
-5
-10
+Largest      i =       arr[i]
+-1           0         5    (✓)
+5            1         0    (X)
+10           2         10   (✓)
+10           3         8    (X)
+17           4         17   (✓)
+17           5         1    (X)
+             6 (X) fails
+             {loop ends}
+
+Console:
 17
 ```
 
+**Note:** Initializing largest variable with value -1 isn't the correct approach as it will create a bug in the array containing negative number.
+
+So, there are two ways to fix the initial value of largest variable like:
+
+1. Either initialize the value of largest with the smallest number as possible so in javascript there is something known as infinity and -infinity so I can initialize it like:
+
 ```text
-i = 0    5
-i = 1    0
-i = 2   10
-i = 3    8
-i = 4   17  ✓
-i = 5    1
-i = 6    fail
-```
-
-Note: Initializing largest let variable with value -1 might be a concern because it will not work in an array containing negative numbers.
-
-So, there are two possible for the initial value of largest let variable like:
-
-1. Either initialize the value of largest to the least number as possible so if array is there something known as infinity and -infinity, so I can initialize it like:
-
 let largest = -Infinity;
+```
 
 2. Or I can also initialize it like:
 
-let largest = [0];
-
-13. What is the logic of `Infinity` and `-Infinity`?
-
-A. Logic:
-
-1. Finding the largest number: start with `-Infinity`(the smallest possible value) so that any real number in the array immediately beats it on the first comparison.
-
-2. Finding the smallest number: start with `Infinity`(the largest possible value) so that any real number beats it going the other direction.
-
-3. Find the smallest number in an array let say [-9, -19, -3]?
-
-A.
-Array:
-
-```js
-let arr = [-9, -19, -3];
+```text
+let largest = arr[0];
 ```
 
-```js
-function findSmallest(arr) {
-  let smallest = Infinity;
+### Dry run of above two ways below!
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < smallest) {
-      smallest = arr[i];
+#### 1.
+
+```text
+let arr = [-9,-19,-3];
+
+function findLargest(arr) {
+    let largest = -Infinity;
+
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] > largest) {
+            largest = arr[i];
+        }
     }
-  }
 
-  return smallest;
+    return largest;
+}
+
+const result = findLargest(arr);
+console.log(result);
+```
+
+```text
+Largest        i =       arr[i]
+-Infinity      0         -9    (✓)
+-9             1         -19   (X)
+-3             2         -3    (✓)
+               3 (X) fails
+               {loop ends}
+
+Console:
+-3
+```
+
+#### 2.
+
+```text
+let arr = [5,0,10,8,17,1];
+
+function findLargest(arr) {
+    let largest = arr[0];
+
+    for(let i=1; i<arr.length; i++) {
+        if(arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+
+    return largest;
+}
+
+const result = findLargest(arr);
+console.log(result);
+```
+
+```text
+Largest      i =       arr[i]
+5            1         0    (X)
+10           2         10   (✓)
+10           3         8    (X)
+17           4         17   (✓)
+17           5         1    (X)
+             6 (X) fails
+             {loop ends}
+
+Console:
+17
+```
+
+### 13. What is the logic of Infinity and -Infinity?
+
+**A.** Logic:
+
+1. Finding the largest I start with -Infinity (the smallest possible value) so that any real number in the array is definitely beats it on the first comparison.
+2. Finding the smallest I start with Infinity (the largest possible value) so that any real number beats it going in the other direction.
+
+### 14. Write a function that returns the smallest number in an array let say [-9,-19,-3]?
+
+**A.**
+
+```text
+let arr = [-9,-19,-3];
+
+function findSmallest(arr) {
+    let smallest = Infinity;
+
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+
+    return smallest;
 }
 
 const result = findSmallest(arr);
 console.log(result);
 ```
 
-Output:
-
 ```text
+Smallest      i =       arr[i]
+Infinity      0         -9    (✓)
+-9            1         -19   (✓)
+-19           2         -3    (X)
+              3 (X) fails
+              {loop ends}
+
+Console:
 -19
 ```
