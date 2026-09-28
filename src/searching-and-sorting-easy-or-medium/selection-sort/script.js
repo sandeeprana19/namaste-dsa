@@ -29,7 +29,7 @@
 //     a[min] = temp;
 //   }
 
-//   return a;
+//   return arr;
 // }
 
 // let result = selectionSort(arr);
@@ -58,7 +58,7 @@
 //     a[min] = temp;
 //   }
 
-//   return a;
+//   return arr;
 // }
 
 // let result = selectionSort(arr);
@@ -89,7 +89,7 @@ function selectionSort(a) {
     }
   }
 
-  return a;
+  return arr;
 }
 
 let result = selectionSort(arr);
