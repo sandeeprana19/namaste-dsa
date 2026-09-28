@@ -110,124 +110,61 @@ Reverse:
 ["y","a","h","s","k","a"]
 ```
 
-## Example 2 — Odd Number of Elements
+## Dry Run — Reverse Array
 
-The notebook gives:
+The notebook shows a dry run for reversing:
 
 ```text
+s = [h, e, l, l, o]
+
 n = 5
-n/2 = 2
+n / 2 = 2
 ```
 
-For an odd number of elements, only the first half needs to be swapped.
+Pointers are moved from the two ends toward the middle.
 
 ```text
-| i | n-1-i | Swap       |
-|---|-------|------------|
-| 0 | 4     | swap(0,4)  |
-| 1 | 3     | swap(1,3)  |
+        0   1   2   3   4
+s = [   h,  e,  l,  l,  o   ]
+
+        ↘               ↙
 ```
 
-The middle element does not need a swap.
-
-The notebook notes:
-
-> I don't have to do anything for this if the number of elements is odd.
-
-### Difference — Even vs Odd Length
+After swapping the first and last elements:
 
 ```text
-| Even Length                         | Odd Length                         |
-|-------------------------------------|------------------------------------|
-| n = 6                               | n = 5                              |
-| n/2 = 3                             | n/2 = 2                            |
-| 3 swaps                             | 2 swaps                            |
-| swap(0,5)                           | swap(0,4)                          |
-| swap(1,4)                           | swap(1,3)                          |
-| swap(2,3)                           | middle element stays in place      |
+s = [o, e, l, l, h]
 ```
 
-### Core Rule
+Then the next pair is considered:
 
 ```text
-for(let i = 0; i < n/2; i++) {
-    swap(i, n-1-i);
-}
+s = [o, l, l, e, h]
 ```
 
-So, whether `n` is even or odd, we only traverse the **first half** of the array.
+The loop stops when the pointers meet/cross.
 
----
-
-# Quick Reference — Differences From These Pages
-
-## Linear Search vs Binary Search
+### Reverse Array
 
 ```text
-| Linear Search                  | Binary Search                    |
-|--------------------------------|----------------------------------|
-| Works on unsorted array        | Requires sorted array            |
-| Search space reduces by 1      | Search space reduces by half     |
-| O(n)                           | O(log n)                         |
-| n = 100 → 100 lines            | n = 100 → 7 lines                |
-| n = 1000 → 1000 lines          | n = 1000 → 10 lines              |
+Swap ???
 ```
 
-## Nested Loops vs Independent Loops
+### Swap using a temporary variable
 
 ```text
-| Nested Loops                   | Independent Loops                |
-|--------------------------------|----------------------------------|
-| n × n                          | n + n + n                        |
-| O(n²)                          | O(3n) → O(n)                     |
-| Growth is quadratic             | Growth is linear                 |
+a = 10
+b = 20
+
+Output:
+a = 20
+b = 10
 ```
 
-## Sorted Array Types
+The notebook writes:
 
 ```text
-| Increasing       | Decreasing       | Non-Decreasing       |
-|------------------|------------------|----------------------|
-| a[i+1] > a[i]   | a[i+1] < a[i]   | a[i+1] >= a[i]      |
-| No duplicates    | No duplicates    | Duplicates allowed  |
-```
-
-## Time vs Space Complexity
-
-```text
-| Time Complexity                  | Space Complexity                  |
-|----------------------------------|------------------------------------|
-| How many operations are needed   | How much extra space is needed     |
-| Depends on execution/work        | Depends on additional memory       |
-| Example: O(n)                    | Example: O(1) or O(n)              |
-```
-
-## In-Place vs New Array
-
-```text
-| In-Place                         | New Array                         |
-|----------------------------------|-----------------------------------|
-| Same array is modified           | Separate array is created         |
-| Saves extra result-array space   | Uses additional space             |
-| First k positions are important  | New array stores the result       |
-```
-
-## Pointer `x` vs Pointer `i`
-
-```text
-| x / Write Pointer                | i / Traversal Pointer             |
-|----------------------------------|-----------------------------------|
-| Tracks output/write position     | Traverses the input               |
-| Moves only when needed           | Usually moves every iteration     |
-| Places valid/unique elements     | Checks current element             |
-```
-
-## Reverse String — Even vs Odd
-
-```text
-| Even n                           | Odd n                             |
-|----------------------------------|-----------------------------------|
-| n/2 swaps                        | n/2 swaps                         |
-| Every element has a pair        | One middle element has no pair    |
-| Middle is swapped as a pair      | Middle remains unchanged          |
+temp = a;        // 10
+a = b;           // 20
+b = temp;        // 10
 ```
