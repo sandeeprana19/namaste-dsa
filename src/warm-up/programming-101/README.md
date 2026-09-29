@@ -4,7 +4,7 @@
 
 ### 3. How does javascript store an array let say arr = [5,10,2,0,1] behind the scene?
 
-**A.** JavaScript creates a table and it store a index and value. And the index start from 0,1,2,3,4 and for each index, there is a value like 5,10,2,0,1. And suppose, if I want to findout the value of index 2 then I just need to do arr[2] => 2 and so on and so forth.
+**A.** JavaScript creates a table and it store a index and value. And the index start from 0,1,2,3,4 and for each index, there is a value like 5,10,2,0,1. And suppose, if I want to find out the value of index 2 then I just need to do arr[2] => 2 and so on and so forth.
 
 So that's how array works and that's how javascript store an array behind the scene.
 
