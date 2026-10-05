@@ -168,5 +168,46 @@ function deleteAtIndex(index) {
 }
 ```
 
-**2. Suppose I have to delete 1st index itself then how do I? So I will
-just move my head like:**
+### 3. Suppose if I have delete at the last, will my `deleteAtIndex(index)` algorithm work?
+
+So suppose if I have delete my "4th" node so I will run a loop so loop
+will keep on going then the current will reach at "3rd" node and now I
+am doing `curr.next = curr.next.next` so `curr.next` will become null as
+`curr.next.next` is pointing to it.
+
+So basically, 4 will start pointing to null and 4 pointing to 4th node
+will be gone so again its perfect and my algorithm will still work like:
+
+```text
+HEAD
+  0       1       2       3       4
+  1  ---> 2  ---> 3  ---> 4  -X-> 5  -X-> NULL
+                         ↑
+                       curr
+
+delete(4);
+                  ↑
+                index
+```
+
+### Final Pseudocode with corner cases
+
+```javascript
+function deleteAtIndex(index) {
+  if (index < 0 || index >= this.size) return;
+
+  if (index === 0) {
+    this.head = this.head.next;
+  } else {
+    let curr = this.head;
+
+    for (let i = 0; i < index - 1; i++) {
+      curr = curr.next;
+    }
+
+    curr.next = curr.next.next;
+  }
+
+  this.size--;
+}
+```
