@@ -92,3 +92,173 @@ prev
 ```text
 NULL ← (1) ← (2) ← (3) ← (4) ← (5)
 ```
+
+Then the pointers keep moving forward:
+
+```text
+prev → prev → prev → prev
+  ↓      ↓      ↓      ↓
+ (1) →  (2) →  (3) →  (4) → (5) → NULL
+        ↑      ↑      ↑
+       curr   curr   curr
+```
+
+### Pseudocode
+
+So, the first thing I have to maintain is the previous value so I need
+to keep a track of previous value.
+
+And I will be starting from the 1st node which is head. So the previous
+value will be initially null. So suppose if I start my current node from
+node 1 then I want my previous value to be null over here and then I
+will point current to previous like:
+
+```text
+prev
+ ↓
+NULL
+
+(1) → (2) → (3) → (4) → (5) → NULL
+ ↑
+curr
+```
+
+```javascript
+prev = null;
+curr = head;
+
+while (curr) {
+  curr.next = prev;
+}
+```
+
+As soon as I hit this line `curr.next = prev`, what happens is my
+current will start pointing to previous value which is null and then
+connection between node 1 and node 2 will go away because now my
+`curr.next` points to null like:
+
+```text
+prev
+ ↓
+null
+ ↑
+(1)     (2) → (3) → (4) → (5) → NULL
+ ↑
+curr
+```
+
+Now, what I have to do is I have to move my current to next but I cannot
+move it now because I have lost the connection of the next element.
+
+So, this code `curr.next = prev` is not correct so before I remove the
+connection between node 1 and node 2 I have to store my next value
+somewhere so node 2 is my next value and my current is need to move to
+the next so I have to somehow store the node 2 value into a temporary
+variable.
+
+So, I will create a temp variable and store this next 2 value and then I
+will change the curr pointer like:
+
+```text
+prev → prev       temp
+null    ↓          ↓
+       (1) → (2) → (3) → (4) → (5) → NULL
+        ↑      ↑
+       curr   curr
+```
+
+```javascript
+prev = null;
+curr = head;
+
+while (curr) {
+  temp = curr.next;
+  curr.next = prev;
+  prev = curr;
+  curr = temp;
+}
+```
+
+### Dry Run
+
+Initially:
+
+```text
+null
+ ↓
+(1) → (2) → (3) → (4) → (5) → NULL
+ ↑      ↑
+prev   curr
+```
+
+After one iteration:
+
+```text
+null ← (1) ← (2) → (3) → (4) → (5) → NULL
+        ↑             ↑
+       prev          curr
+```
+
+After the next iteration:
+
+```text
+null ← (1) ← (2) ← (3) → (4) → (5) → NULL
+               ↑             ↑
+              prev          curr
+```
+
+After the next iteration:
+
+```text
+null ← (1) ← (2) ← (3) ← (4) → (5) → NULL
+                      ↑             ↑
+                     prev          curr
+```
+
+Continuing the dry run:
+
+```text
+null ← (1) ← (2) ← (3) ← (4) ← (5) → NULL
+                                  ↑
+                                 prev
+```
+
+Now, I make this previous as head so my head becomes previous like:
+
+```text
+NULL ← (1) ← (2) ← (3) ← (4) ← (5)
+                                  ↑
+                                 HEAD
+```
+
+And then I will return this head and my linked list now has reversed.
+
+### Final pseudocode
+
+```javascript
+prev = null;
+curr = head;
+
+while (curr) {
+  temp = curr.next;
+  curr.next = prev;
+  prev = curr;
+  curr = temp;
+}
+
+head = prev;
+return head;
+```
+
+So, I can skip changing my head so head was pointing somewhere. And I
+can directly return `prev` also and it will also work because I have to
+just return the last node where the linked list will start from.
+
+See, this head is nothing but just a pointer to that location so there
+is no copy of head and I was doing `head = prev` which doesn't mean
+anything as it is just changing the pointer where head will be pointing.
+
+But the question says that I just have to return the node which it is.
+So node can be previous also so can just return `prev` also.
+
+This should also work.
