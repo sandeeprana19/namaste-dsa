@@ -1,4 +1,4 @@
-# 🚀 Namaste DSA By Akshay Saini Sir
+# 🚀 Namaste DSA (Data Structure & Algorithm) By Akshay Saini Sir
 
 # Introduction
 

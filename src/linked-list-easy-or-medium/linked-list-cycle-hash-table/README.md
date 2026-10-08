@@ -151,3 +151,181 @@ one by one.
 
 So, whenever I have to find or search for any element inside the big
 data I will use the set for that.
+
+## Dry Run For Three Node
+
+Initial state:
+
+```text
+prev
+null
+
+(1)        (2)        (3)
+ ↑
+curr
+```
+
+Linked list:
+
+```text
+prev
+null
+
+(1) → (2) → (3) → NULL
+ ↑
+curr
+```
+
+### First step
+
+```text
+prev
+null → prev
+
+(1)        (2) → (3) → NULL
+ ↑           ↑
+curr        curr
+```
+
+### Second step
+
+```text
+null ← (1) ← (2)        (3) → NULL
+         ↑      ↑         ↑
+        prev   curr      temp
+```
+
+### Third step
+
+```text
+null ← (1) ← (2) ← (3)
+                ↑      ↑
+               prev   curr
+```
+
+At this point:
+
+```text
+return prev
+```
+
+where `prev` is pointing to node `3`.
+
+And now `curr = null` so the loop ends and my whole linked list reversed now and it returns `prev` which is the last node `3`.
+
+# How do I detect a cycle?
+
+A linked list without a cycle:
+
+```text
+(1) → (2) → (3) → (4) → null
+```
+
+**Not a Cycle Linked List**
+
+A linked list with a cycle:
+
+```text
+(1) → (2) → (3) → (4)
+       ↑             |
+       |_____________|
+```
+
+**Cycle Linked List**
+
+I will create a `"set"` and I will iterate through the above linked list one by one and I will keep pushing their elements into my linked list meaning I will keep pushing their nodes into my `"set"` so I'll do:
+
+```javascript
+Set.add(curr);
+```
+
+So, I will keep adding my current node and suppose my current node is like:
+
+```text
+(1) → (2) → (3) → (4)
+
+  ↘     ↓     ↓     ↙
+       Set.add(curr)
+```
+
+So, I will run a loop and I will keep adding these node and I will also keep checking if I have seen the same node again or not. So I will check using:
+
+```javascript
+Set.has(curr);
+```
+
+If I have seen the current node again I will stop and I will return `true` which means yes it has cycle and cycle is present.
+
+Because see suppose if I have a `"set"` and suppose if I keep going so this is my current element over here like:
+
+Example linked list:
+
+```text
+(1) → (2) → (3) → (4)
+ ↑
+curr
+```
+
+The nodes are checked against the set as they are visited.
+
+So basically, see first of all 1st node 1 will be put into my `"set"` and now before adding 2nd node I will check is node 2 inside the `"set"` so no 2 is not inside so I will push this 2 also and now is 3 inside the `"set"` no 3 is not there so I will push it and now is 4 inside the `"set"` no so I will push it.
+
+Now, it will go to next so it will check is 2 inside the `"set"` yes 2 is exist so that means there is cycle.
+
+Example:
+
+```text
+(1) → (2) → (3) → (4)
+       ↑             |
+       |_____________|
+
+curr
+```
+
+Set:
+
+```text
+[ 1   2   3   4 ]
+```
+
+So, if I ever reach `"null"` that means it is not a cyclic linked list.
+
+So basically, it's a very easy logic like I keep maintaining a `"set"` with linked list values and if I find a same node again then I will break and I will say it has a cycle.
+
+And if I found a null that means it does not have a cycle because I have encountered `"null"`.
+
+So cyclic linked list can never have `"null"` and it will come back to any same node again.
+
+So, this is how the whole logic works to detect do a linked list is a cycle or not.
+
+## Pseudo code
+
+```javascript
+Function hasCycle(head) {
+    SeenNodes = (new Set());
+    let curr = head;
+
+    while (curr) {
+        if (SeenNodes.has(curr)) return true;
+        SeenNodes.add(curr);
+        curr = curr.next;
+    }
+
+    return false;
+}
+```
+
+## Dry Run
+
+### Case 1:
+
+```text
+(1) → (2) → (3) → (4) → (5) → null  ✕ {Loop break}
+
+curr → curr → curr → curr → curr → curr
+
+SeenNodes
+[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] → {no cycles}
+```
+
+And it return `false` which means there is no cycle.
