@@ -223,3 +223,47 @@ The important corner case is the empty linked list:
 head = null
 → return false
 ```
+
+### 2. Time and Space Complexity
+
+#### Time Complexity
+
+According to Floyd’s Algorithm, I am moving the slow pointer and fast pointer. The slow pointer is running at `x` speed and the fast pointer is running at `2x` speed.
+
+When I am running something at `2x` speed, it will catch the slow pointer very fast, in just one or two loop cycles.
+
+The fast pointer does not go in the order of `n²` or something, and it does not go into an infinite loop because it cannot. It will quickly catch the slow pointer if I am running it at `2x` speed.
+
+So, the time complexity of this algorithm is:
+
+`O(n)`
+
+### Space Complexity
+
+I am not using any extra space, so I am just using the slow pointer and fast pointer, like two variables.
+
+So, the space complexity is:
+
+`O(1)`
+
+So, this Floyd’s Cycle-Finding Algorithm is much better than the previous **Hash Table or Hash Map** approach.
+
+### 3. Dry Run
+
+#### Case 1
+
+The diagram shows a linked list whose pointers eventually meet:
+
+`1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → (back into the list)`
+
+The slow (`S`) and fast (`F`) pointers move through the list. When **Slow = Fast**, that means a **cycle** is present.
+
+#### Case 2
+
+The second diagram shows another list:
+
+`1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → (back into the list)`
+
+The pointers eventually meet as well, so the loop breaks and the function returns `true`.
+
+The diagrams illustrate that when slow and fast pointers meet, a cycle is detected.
