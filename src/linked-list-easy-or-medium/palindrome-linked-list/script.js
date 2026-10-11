@@ -7,7 +7,7 @@
 // Use case: 01
 // =============================================
 var isPalindrome = function (head) {
-  if (!head || head.length == 1) return false;
+  if (!head) return false;
   let arr = new Array();
   let curr = head;
   while (curr) {
