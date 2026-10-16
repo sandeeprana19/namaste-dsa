@@ -1,1 +1,0 @@
-# Searching & Sorting --- Easy/Medium
