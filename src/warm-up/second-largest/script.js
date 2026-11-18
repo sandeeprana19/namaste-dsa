@@ -227,7 +227,7 @@ let arr = [10, 20, 8, 9, 3, 5, 20, 20];
 
 function findSecondLargest(arr) {
   if (arr.length < 2) {
-    return "Array should have atleast 2 elements";
+    return "Array should have at least 2 elements";
   }
 
   let firstLargest = -Infinity;
